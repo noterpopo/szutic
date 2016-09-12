@@ -1,15 +1,17 @@
 #include<iostream>
+#include<typeinfo> 
 using std::cin;
 using std::cout;
 int main ()
 {
 	int num = 0;
-	cout<<"ÇëÊäÈëÒ»¸öÕıÕûÊı£º";
-    if(cin>>num&&num>0)
+	cout<<"è¯·è¾“å…¥ä¸€ä¸ªæ­£æ•´æ•°ï¼š";
+	cin>>num;
+    if(typeid(num)==typeid(int)&&num>0)
     	for(int i=1;i<=num;++i)
     		cout<<i<<"I LOVE SZUTIC"<<std::endl;
     else
-    	cout<<"I LOVE Éî´ó";
+    	cout<<"I LOVE æ·±å¤§";
 
 	return 0;
 }
