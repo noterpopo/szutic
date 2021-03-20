@@ -13,7 +13,7 @@ $(BUILD_DIR)/kernel.bin: $(OBJS)
 .PHONY: mkdir clean all
 
 mkdir: 
-	if [[ ! -d $(BUILD_DIR) ]];then mkdir $(BUILD_DIR);fi
+	if [! -d $(BUILD_DIR)];then mkdir $(BUILD_DIR);fi
 
 clean:
 	cd $(BUILD_DIR) && rm -f ./*
