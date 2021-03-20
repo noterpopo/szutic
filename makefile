@@ -1,10 +1,11 @@
 BUILD_DIR = ./build
+ENTRY_POINT = 0xc0001500
 AS = nasm
 CC = gcc
 LD = ld
 ASFLAG = -f elf
 CFLAGS = -m32 -ffreestanding -nostdlib -mno-red-zone -Wall -c -W -Wstrict-prototypes -Wmissing-prototypes
-LDFLAGS = -m elf_i386 -e main -Map $(BUILD_DIR)/kernel.map
+LDFLAGS = -m elf_i386 -Ttext $(ENTRY_POINT) -e main -Map $(BUILD_DIR)/kernel.map
 OBJS =  $(BUILD_DIR)/main.o 
 $(BUILD_DIR)/main.o: main.c
 				$(CC) $(CFLAGS) $< -o $@
