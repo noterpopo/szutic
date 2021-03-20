@@ -1,0 +1,16 @@
+name: nasm-gcc-CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ilammy/setup-nasm@v1.2.0
+    - name: make
+      run: make build
