@@ -8,6 +8,8 @@ LDFLAGS = -m elf_i386 -e main -Map $(BUILD_DIR)/kernel.map
 OBJS =  $(BUILD_DIR)/main.o 
 $(BUILD_DIR)/main.o: main.c
 				$(CC) $(CFLAGS) $< -o $@
+$(BUILD_DIR)/kernel.bin: $(OBJS)
+				$(LD) $(LDFLAGS) $^ -o $@
 .PHONY: mkdir clean all
 
 mkdir: 
